@@ -22,7 +22,7 @@ typedef long double ld;
 typedef pair<int,int> PII ; 
 #define x first
 #define y second
-
+#define all(x) (x).begin(), (x).end()
 const double PI=acos(-1.0);
 const double eps=1e-6;
 const ll mod=1e9+7;
