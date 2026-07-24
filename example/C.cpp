@@ -1,55 +1,44 @@
 #include <iostream>
-#include <string>
 #include <vector>
-using namespace std;
+#include <algorithm>
+#include <cstring>
+#include <stack>
+#include <cmath>
+#include <queue>
+
 #define endl '\n' 
+#define all(x) (x).begin() , (x).end() 
+#define pb push_back
+#define x first 
+#define y second 
+#define debug(x) cerr << #x << " = " << x << endl
+
+using namespace std; 
+
+const int N = 1e6 + 10 ;
+const int MOD = 1e9 + 7;
+
+using ll = long long ;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+inline void write(int x ); 
+
+
+
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int T;
-    cin >> T;
-    string p = "execute";
-    while (T--)
-    {
-        string s;
-        cin >> s;
-        vector<int> pos;
-        for (size_t  i = 0; i + 7 <=s.size(); i++)
-        {
-            if (s.compare(i, 7, p) == 0)
-            {
-                pos.push_back(i);
-            }
-        }
-        int n = pos.size();
-        for (int l = 0; l < n; )
-        {
-            int r = l;
-            while (r + 1 < n && pos[r + 1] - pos[r] == 6)
-            {
-                r++;
-            }
-            int len = r - l + 1;
-            if (len % 2 == 1)
-            {
-                for (int i = 0; i < len; i += 2)
-                {
-                    s[pos[l + i]] = '1';
-                }
-            }
-            else
-            {
-                for (int i = 1; i < len; i += 2)
-                {
-                    s[pos[l + i]] = '1';
-                }
-            }
-
-            l = r + 1;
-        }
-        cout << s << endl; 
-    }
-
-    return 0;
+    return 0 ; 
 }
+
+inline void write(int x)
+{
+    if(x<0) {
+        putchar('-');
+        x = -x;
+    }
+    if(x>9) write(x / 10);
+    putchar(x % 10 + '0');
+}
+

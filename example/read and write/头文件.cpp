@@ -1,59 +1,53 @@
-#include<iostream>
-#include<cstdio>
-#include<cstring>
-#include<algorithm>
-#include<bitset>
-#include<cassert>
-#include<cctype>
-#include<cmath>
-#include<cstdlib>
-#include<ctime>
-#include<deque>
-#include<iomanip>
-#include<list>
-#include<map>
-#include<queue>
-#include<set>
-#include<stack>
-#include<vector>
-using namespace std;
-typedef long long ll;
-typedef long double ld;
-typedef pair<int,int> PII ; 
-#define x first
-#define y second
-#define all(x) (x).begin(), (x).end()
-const double PI=acos(-1.0);
-const double eps=1e-6;
-const ll mod=1e9+7;
-const int inf=0x3f3f3f3f;
-const int maxn=1e5+10;
-const int maxm=100+10;
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstring>
+#include <stack>
+#include <cmath>
+#include <queue>
+#include <unordered_map>
+#include <set>
 
-inline void write(int x);
-inline int read();
+#define endl '\n' 
+#define all(x) (x).begin() , (x).end() 
+#define pb push_back
+#define x first 
+#define y second 
+#define debug(x) cerr << #x << " = " << x << endl
+
+using namespace std; 
+
+
+template<class T>
+istream& operator>>(istream& in, vector<T>& a) {
+    for(auto &x : a) in >> x;
+    return in;
+}
+
+template<class T>
+ostream& operator<<(ostream& out, const vector<T>& a) {
+    for(int i = 0; i < (int)a.size(); i++) {
+        if(i) out << ' ';
+        out << a[i];
+    }
+    return out;
+}
+
+const int N = 1e6 + 10 ;
+const int MOD = 1e9 + 7;
+
+using ll = long long ;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+inline void write(int x ); 
+
+
 
 int main()
 {
-    ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-
-
-    return 0 ;
-}
-
-
-inline int read() {
-    int num=0, w=0;
-    char ch=0;
-    while (!isdigit(ch)) {
-        w|=ch=='-';
-        ch = getchar();
-    }
-    while (isdigit(ch)) {
-        num = (num<<3) + (num<<1) + (ch^48);
-        ch = getchar();
-    }
-    return w? -num: num;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    return 0 ; 
 }
 
 inline void write(int x)
@@ -65,3 +59,4 @@ inline void write(int x)
     if(x>9) write(x / 10);
     putchar(x % 10 + '0');
 }
+

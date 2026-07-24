@@ -1,34 +1,44 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using namespace std;
-#define int long long 
-const int N = 5050 ;
-int f[N][N];  
-int a[N]; 
-vector<int> s ; 
-signed  main()
+#include <cstring>
+#include <stack>
+#include <cmath>
+#include <queue>
+
+#define endl '\n' 
+#define all(x) (x).begin() , (x).end() 
+#define pb push_back
+#define x first 
+#define y second 
+#define debug(x) cerr << #x << " = " << x << endl
+
+using namespace std; 
+
+const int N = 1e6 + 10 ;
+const int MOD = 1e9 + 7;
+
+using ll = long long ;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+inline void write(int x ); 
+
+
+
+int main()
 {
-    int n , m , k ; cin >> n >> m >> k ;
-    for(int i =1 ; i <= n ; i ++ )  cin >> a[i]; 
-    for(int i = 1; i <=n - m + 1  ; i ++ )  
-    {
-        int sum = 0 ; 
-        for(int j = 0 ; j < m ; j ++ ) 
-        {
-            sum += a[i + j ] ; 
-        }
-        s.push_back(sum) ; 
-    }
-    sort(s.begin() , s.end() , [](int a, int b) 
-    {
-        return a > b ; 
-    }) ;
-    int ans =0  ;
-    for(int i = 0 ; i < k ; i ++ ) 
-    {
-        ans += s[i];         
-    }
-    cout << ans << endl; 
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     return 0 ; 
 }
+
+inline void write(int x)
+{
+    if(x<0) {
+        putchar('-');
+        x = -x;
+    }
+    if(x>9) write(x / 10);
+    putchar(x % 10 + '0');
+}
+

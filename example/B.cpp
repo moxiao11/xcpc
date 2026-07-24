@@ -1,9 +1,38 @@
 #include <iostream>
-#include <queue>
 #include <vector>
-using namespace std;
-typedef long long  ll ; 
-inline void write(__int128_t x)
+#include <algorithm>
+#include <cstring>
+#include <stack>
+#include <cmath>
+#include <queue>
+
+#define endl '\n' 
+#define all(x) (x).begin() , (x).end() 
+#define pb push_back
+#define x first 
+#define y second 
+#define debug(x) cerr << #x << " = " << x << endl
+
+using namespace std; 
+
+const int N = 1e6 + 10 ;
+const int MOD = 1e9 + 7;
+
+using ll = long long ;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+inline void write(int x ); 
+
+
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    return 0 ; 
+}
+
+inline void write(int x)
 {
     if(x<0) {
         putchar('-');
@@ -12,29 +41,4 @@ inline void write(__int128_t x)
     if(x>9) write(x / 10);
     putchar(x % 10 + '0');
 }
-int main()
-{
-    int t ; cin >> t; 
-    while(t -- ) 
-    {
-        int n ; cin >> n ;
-        priority_queue<ll>  q ;
-        for(int i = 0 ; i < n ;i ++ ) 
-        {
-            ll a; cin >> a ;
-            q.push(a) ; 
-        }    
-        __int128_t sum = 0 ;
-        for(int i = 0 ; i < n - 1; i ++ ) 
-        {
-            __int128_t a = q.top() ; q.pop() ; 
-            __int128_t b = q.top() ; q.pop() ; 
-            __int128_t t = a + b ; 
-            q.push(t) ; 
-            sum += max(a, b) ;       
-        }
-        write(sum)  ;
-        printf("\n") ; 
-    }
-    return 0 ; 
-}
+
